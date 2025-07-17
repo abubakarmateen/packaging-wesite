@@ -5,9 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import boxImg from "/EcoKraft.jpg";
 import bagImg from "/Custompaperbag.jpg";
 import mailerImg from "/Biodegradavle.jpg";
-import pouchImg from "/Fabricpouch.jpg";
-import wrapImg from "/Recycledwrap.jpg";
-import tapeImg from "/Ecotape.jpg";
 
 function Customizer() {
   const [selectedType, setSelectedType] = useState("box");

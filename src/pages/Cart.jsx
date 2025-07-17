@@ -9,14 +9,14 @@ const cartItems = [
     name: "Custom Box",
     price: 12.99,
     quantity: 2,
-    image: "/kelli-mcclintock-GopRYASfsOc-unsplash.jpg",
+    image: "/daily-nouri-E5Oo4nENq2M-unsplash.jpg",
   },
   {
     id: 2,
     name: "Eco Bag",
     price: 7.5,
     quantity: 1,
-    image: "/freestocks-spP6LqxN0-g-unsplash.jpg",
+    image: "/sticker-mule-pg6MTKrHheA-unsplash.jpg",
   },
 ];
 
