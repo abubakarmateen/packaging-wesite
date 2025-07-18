@@ -153,7 +153,6 @@ const materials = [
 ];
 const sizes = ["small", "medium", "large"];
 const colors = ["brown", "white", "green"];
-const types = ["box", "mailers", "bags", "wrap", "tape"];
 const ecoCerts = ["eco", "best seller", "new"];
 
 function Products() {
@@ -452,7 +451,7 @@ function Products() {
                 </span>
               )}
               {product.sale && (
-                <span className="absolute top-3 right-3 bg-pink-600 text-white text-xs px-3 py-1 rounded-full z-10 font-semibold">
+                <span className="absolute top-3 right-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full z-10 font-semibold">
                   Sale
                 </span>
               )}
@@ -571,6 +570,11 @@ function Products() {
                     {selectedProduct.badge && (
                       <span className="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
                         {selectedProduct.badge}
+                      </span>
+                    )}
+                    {selectedProduct.sale && (
+                      <span className="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                        Sale
                       </span>
                     )}
                   </div>
