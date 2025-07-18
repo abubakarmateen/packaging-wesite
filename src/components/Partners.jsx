@@ -27,7 +27,7 @@ function Partners() {
   const repeatedLogos = [...logos, ...logos];
 
   return (
-    <section className="bg-green-700 py-10 overflow-hidden">
+    <section className="bg-green-700 py-14 overflow-hidden">
       <div className="w-full overflow-hidden relative">
         <div
           className="flex gap-12 animate-marquee will-change-transform"
@@ -38,12 +38,12 @@ function Partners() {
               src={logo}
               alt={`brand-${index}`}
               loading="lazy"
-              className="w-28 h-14 object-contain grayscale hover:grayscale-0 transition duration-300"
+              className="w-28 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 hover:shadow-[0_0_24px_0_rgba(34,197,94,0.35)] transition duration-300"
+              style={{ filter: "drop-shadow(0 0 0 #16a34a00)" }}
             />
           ))}
         </div>
       </div>
-
       {/* Add keyframes for smooth animation */}
       <style>
         {`

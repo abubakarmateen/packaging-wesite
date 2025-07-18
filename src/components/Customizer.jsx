@@ -49,7 +49,7 @@ function Customizer() {
   return (
     <section className="bg-gradient-to-r from-gray-100 to-green-50 py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-green-700">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-green-700 text-center mb-12 tracking-tight">
           Customize Your Packaging
         </h2>
 

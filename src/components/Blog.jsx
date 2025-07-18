@@ -32,43 +32,81 @@ const blogPosts = [
 
 function BlogSection() {
   return (
-    <section className="px-6 py-16 bg-gray-50" id="blog">
-      <div className="max-w-7xl mx-auto text-center">
-        <motion.h2
-          className="text-4xl font-bold mb-6 text-green-700"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}>
-          From Our Blog
-        </motion.h2>
-        <p className="text-gray-600 mb-12 max-w-xl mx-auto">
-          Stay updated with tips, trends, and insights to elevate your packaging
-          game.
-        </p>
-
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {blogPosts.map((post) => (
-            <motion.div
-              key={post.id}
-              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: post.id * 0.2 }}>
-              <img
-                src={post.image}
-                alt={post.title}
-                className="h-48 w-full object-cover"
-              />
-              <div className="p-6 text-left">
-                <span className="text-sm text-green-600 font-semibold uppercase">
-                  #{post.tag}
-                </span>
-                <h3 className="text-xl font-bold mt-2 mb-2">{post.title}</h3>
-                <p className="text-gray-600 text-sm">{post.desc}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+    <section className="relative px-6 py-24 bg-white overflow-hidden" id="blog">
+      {/* Futuristic animated green gradient bar */}
+      <motion.div
+        className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-green-400 via-green-600 to-green-700 opacity-90"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      />
+      {/* Futuristic blurred orbs */}
+      <motion.div
+        className="absolute -top-24 -left-32 w-96 h-96 bg-green-400 opacity-20 rounded-full blur-3xl z-0"
+        animate={{ x: [0, 30, 0], y: [0, 20, 0] }}
+        transition={{ repeat: Infinity, duration: 10, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute bottom-0 right-[-100px] w-96 h-96 bg-green-700 opacity-10 rounded-full blur-3xl z-0"
+        animate={{ x: [0, -40, 0], y: [0, -30, 0] }}
+        transition={{ repeat: Infinity, duration: 12, ease: "easeInOut" }}
+      />
+      <motion.h2
+        className="text-4xl md:text-5xl font-extrabold text-green-700 mb-8 tracking-tight text-center relative z-10"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}>
+        From Our Blog
+      </motion.h2>
+      <p className="text-gray-600 mb-12 max-w-xl mx-auto text-center relative z-10">
+        Stay updated with tips, trends, and insights to elevate your packaging
+        game.
+      </p>
+      <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 relative z-10">
+        {blogPosts.map((post, idx) => (
+          <motion.div
+            key={post.id}
+            className="bg-white/60 border-2 border-green-200/60 rounded-3xl p-0 flex flex-col overflow-hidden group transition-all duration-300 cursor-pointer backdrop-blur-xl"
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            whileHover={{
+              y: -12,
+              scale: 1.06,
+              boxShadow: "0 8px 32px 0 rgba(34,197,94,0.10)",
+            }}
+            transition={{ duration: 0.5, delay: idx * 0.1 }}
+            viewport={{ once: true }}>
+            <img
+              src={post.image}
+              alt={post.title}
+              className="h-48 w-full object-cover"
+            />
+            <div className="p-6 text-left flex-1 flex flex-col">
+              <motion.span
+                className="inline-block mb-2 px-3 py-1 bg-green-100 text-green-700 font-semibold rounded-full text-xs uppercase tracking-wide"
+                animate={{
+                  scale: [1, 1.08, 1],
+                  boxShadow: [
+                    "0 0 0 0 #bbf7d0",
+                    "0 0 0 8px #bbf7d033",
+                    "0 0 0 0 #bbf7d0",
+                  ],
+                }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 2,
+                  ease: "easeInOut",
+                }}>
+                #{post.tag}
+              </motion.span>
+              <h3 className="text-xl font-bold mt-1 mb-2 text-green-800 group-hover:text-green-600 transition">
+                {post.title}
+              </h3>
+              <p className="text-gray-600 text-sm flex-1">{post.desc}</p>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );
