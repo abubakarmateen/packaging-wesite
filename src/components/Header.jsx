@@ -13,8 +13,6 @@ import logo from "/logo.svg";
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [splashDone, setSplashDone] = useState(false);
-  const [loaderLoaded, setLoaderLoaded] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
 
   const headerRef = useRef(null);
@@ -24,15 +22,12 @@ function Header() {
   const currentPath = location.pathname;
 
   useEffect(() => {
-    setTimeout(() => setLoaderLoaded(true), 500);
-
     setTimeout(() => {
       if (splashRef.current)
         splashRef.current.classList.add("-translate-y-full");
       document.body.style.overflow = "visible";
       setTimeout(() => {
         if (headerRef.current) headerRef.current.classList.add("fade-in");
-        setSplashDone(true);
       }, 700);
     }, 2500);
 
@@ -186,11 +181,28 @@ function Header() {
             </span>
           </Link>
 
-          {/* Get a Quote Button */}
+          {/* Certifications & Partnerships Button */}
           <Link
-            to="/quote"
-            className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full text-sm font-medium h-[40px] flex items-center justify-center">
-            GET A QUOTE
+            to="/certifications"
+            className="bg-gradient-to-r from-green-500 via-green-400 to-green-600 hover:from-green-600 hover:to-green-500 text-white px-4 py-2 rounded-full text-sm font-medium h-[40px] flex items-center justify-center shadow-lg transition-all duration-300 animate-pulse"
+            style={{ letterSpacing: 1 }}>
+            <span className="flex items-center gap-2">
+              <svg
+                width="20"
+                height="20"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                className="text-white animate-spin-slow">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M6.05 17.95l-1.414 1.414m12.728 0l-1.414-1.414M6.05 6.05L4.636 4.636"
+                />
+              </svg>
+              CERTIFICATIONS
+            </span>
           </Link>
         </div>
       </header>
